@@ -1,4 +1,4 @@
-﻿namespace LKZ.DependencyInject
+namespace LKZ.DependencyInject
 {
     /// <summary>
     /// DIAwake调用

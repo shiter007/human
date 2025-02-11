@@ -5,30 +5,30 @@ using UnityEngine.Serialization;
 namespace LKZ.DependencyInject
 {
     /// <summary>
-    /// ³¡¾°µÄÒÀÀµ×¢ÈëÉÏÏÂÎÄ
+    /// åœºæ™¯çš„ä¾èµ–æ³¨å…¥ä¸Šä¸‹æ–‡
     /// </summary>
     [DefaultExecutionOrder(-200)]
     [HelpURL("http://www.lkz.fit")]
     [DisallowMultipleComponent]
-    [AddComponentMenu("LKZ/ÒÀÀµ×¢Èë/ÒÀÀµ×¢Èë³¡¾°ÉÏÏÂÎÄ¹ÜÀí")]
+    [AddComponentMenu("LKZ/ä¾èµ–æ³¨å…¥/ä¾èµ–æ³¨å…¥åœºæ™¯ä¸Šä¸‹æ–‡ç®¡ç†")]
     public class SceneDependencyInjectContextManager : MonoBehaviour
     {
         /// <summary>
-        /// µ¥Àı
+        /// å•ä¾‹
         /// </summary>
         public static SceneDependencyInjectContextManager Instance { get; private set; }
 
-        [SerializeField, FormerlySerializedAs("ÊÇ·ñ¼ÓÔØ³¡¾°²»Ïú»Ù")]
+        [SerializeField, FormerlySerializedAs("æ˜¯å¦åŠ è½½åœºæ™¯ä¸é”€æ¯")]
         private bool dontDestroyOnLoad = true;
 
         /// <summary>
-        /// ÒÀÀµ×¢ÈëUnityÅäÖÃÎÄ¼ş
+        /// ä¾èµ–æ³¨å…¥Unityé…ç½®æ–‡ä»¶
         /// </summary>
-        [SerializeField, FormerlySerializedAs("ÒÀÀµ×¢ÈëUnityÅäÖÃÎÄ¼ş")]
+        [SerializeField, FormerlySerializedAs("ä¾èµ–æ³¨å…¥Unityé…ç½®æ–‡ä»¶")]
         private DIScriptableObject[] scriptableObjects;
 
         /// <summary>
-        /// ÒÀÀµ×¢ÈëÉÏÏÂÎÄ
+        /// ä¾èµ–æ³¨å…¥ä¸Šä¸‹æ–‡
         /// </summary>
         private DependencyInjectContext dependencyInjectContext;
 
@@ -42,19 +42,19 @@ namespace LKZ.DependencyInject
             Instance = this;
 #if UNITY_EDITOR
             if (FindObjectsOfType<SceneDependencyInjectContextManager>().Length > 1)
-                Debug.LogError($"³¡¾°ÖĞÓĞ¶à¸ö{nameof(SceneDependencyInjectContextManager)}½Å±¾!");
+                Debug.LogError($"åœºæ™¯ä¸­æœ‰å¤šä¸ª{nameof(SceneDependencyInjectContextManager)}è„šæœ¬!");
 #endif
 
             dependencyInjectContext = new DependencyInjectContext();
-            //»ñµÃ×Ô¶¨Òå×é¼ş
+            //è·å¾—è‡ªå®šä¹‰ç»„ä»¶
               AllCustomComponent = dependencyInjectContext.GetCustomComponent();
 
-            //µ÷ÓÃ¼Ì³ĞÁË×¢Èë½Ó¿ÚIDIRegisterBinding·½·¨
+            //è°ƒç”¨ç»§æ‰¿äº†æ³¨å…¥æ¥å£IDIRegisterBindingæ–¹æ³•
             InvokeBindInjectsInterface(AllCustomComponent);
-            //µ÷ÓÃUnityÅäÖÃÎÄ¼şµÄ×¢Èë°ó¶¨
+            //è°ƒç”¨Unityé…ç½®æ–‡ä»¶çš„æ³¨å…¥ç»‘å®š
             InvokeInjectBindingScriptableObject();
 
-            #region ¸øÊ¹ÓÃÁËInjectÌØĞÔµÄÊôĞÔ×¢Èë
+            #region ç»™ä½¿ç”¨äº†Injectç‰¹æ€§çš„å±æ€§æ³¨å…¥
 
             InjectsProperty(AllCustomComponent);
             #endregion
@@ -67,9 +67,9 @@ namespace LKZ.DependencyInject
             dependencyInjectContext.InvokeDIStartInterface(AllCustomComponent);
         }
 
-        #region µ÷ÓÃUnityÅäÖÃÎÄ¼şµÄ×¢Èë°ó¶¨ Ë½ÓĞ
+        #region è°ƒç”¨Unityé…ç½®æ–‡ä»¶çš„æ³¨å…¥ç»‘å®š ç§æœ‰
         /// <summary>
-        /// µ÷ÓÃUnityÅäÖÃÎÄ¼şµÄ×¢Èë°ó¶¨
+        /// è°ƒç”¨Unityé…ç½®æ–‡ä»¶çš„æ³¨å…¥ç»‘å®š
         /// </summary>
         private void InvokeInjectBindingScriptableObject()
         {
@@ -81,34 +81,34 @@ namespace LKZ.DependencyInject
         #endregion
          
 
-        #region µ÷ÓÃ×¢Èë°ó¶¨µÄ½Ó¿Ú
+        #region è°ƒç”¨æ³¨å…¥ç»‘å®šçš„æ¥å£
         /// <summary>
-        /// µ÷ÓÃ×¢Èë°ó¶¨µÄ½Ó¿Ú
-        /// ³¡¾°ÖĞÓĞË­¼Ì³ĞÁËIDIRegisterBinding½Ó¿Ú£¬¾Íµ÷ÓÃÄÇ¸ö½Ó¿Ú·½·¨
+        /// è°ƒç”¨æ³¨å…¥ç»‘å®šçš„æ¥å£
+        /// åœºæ™¯ä¸­æœ‰è°ç»§æ‰¿äº†IDIRegisterBindingæ¥å£ï¼Œå°±è°ƒç”¨é‚£ä¸ªæ¥å£æ–¹æ³•
         /// </summary>
-        /// <param name="component">×Ô¶¨ÒåµÄ×é¼ş</param>
+        /// <param name="component">è‡ªå®šä¹‰çš„ç»„ä»¶</param>
         public void InvokeBindInjectInterface(object component)
         {
             dependencyInjectContext.InvokeBindInjectInterface(component);
         }
 
         /// <summary>
-        /// µ÷ÓÃ×¢Èë°ó¶¨µÄ½Ó¿Ú
-        /// ³¡¾°ÖĞÓĞË­¼Ì³ĞÁËIDIRegisterBinding½Ó¿Ú£¬¾Íµ÷ÓÃÄÇ¸ö½Ó¿Ú·½·¨
+        /// è°ƒç”¨æ³¨å…¥ç»‘å®šçš„æ¥å£
+        /// åœºæ™¯ä¸­æœ‰è°ç»§æ‰¿äº†IDIRegisterBindingæ¥å£ï¼Œå°±è°ƒç”¨é‚£ä¸ªæ¥å£æ–¹æ³•
         /// </summary>
-        /// <param name="component">×Ô¶¨ÒåµÄ×é¼ş</param>
+        /// <param name="component">è‡ªå®šä¹‰çš„ç»„ä»¶</param>
         public void InvokeBindInjectsInterface(params object[] component)
         {
-            //µ÷ÓÃ¼Ì³ĞÁË×¢Èë½Ó¿ÚIDIRegisterBinding·½·¨
+            //è°ƒç”¨ç»§æ‰¿äº†æ³¨å…¥æ¥å£IDIRegisterBindingæ–¹æ³•
             dependencyInjectContext.InvokeBindInjectInterface(component);
         }
         #endregion
 
-        #region ×¢ÈëÊôĞÔÖµ
+        #region æ³¨å…¥å±æ€§å€¼
         /// <summary>
-        /// ×¢ÈëÊôĞÔÖµ
+        /// æ³¨å…¥å±æ€§å€¼
         /// </summary>
-        /// <param name="component">×é¼şµÄÊµÀı</param>
+        /// <param name="component">ç»„ä»¶çš„å®ä¾‹</param>
         public void InjectProperty(object component)
         {
             foreach (var property in component.GetType().GetUseInjectAttributeProperty())
@@ -118,9 +118,9 @@ namespace LKZ.DependencyInject
         }
 
         /// <summary>
-        /// ×¢ÈëÊôĞÔÖµ
+        /// æ³¨å…¥å±æ€§å€¼
         /// </summary>
-        /// <param name="component">×é¼şµÄÊµÀı,¶à¸ö×é¼ş</param>
+        /// <param name="component">ç»„ä»¶çš„å®ä¾‹,å¤šä¸ªç»„ä»¶</param>
         public void InjectsProperty(object[] components)
         {
             foreach (object item in components)
@@ -134,9 +134,9 @@ namespace LKZ.DependencyInject
         }
         #endregion
 
-        #region »ñµÃ°ó¶¨ÒÀÀµ×¢²áµÄ½Ó¿Ú
+        #region è·å¾—ç»‘å®šä¾èµ–æ³¨å†Œçš„æ¥å£
         /// <summary>
-        /// »ñµÃ°ó¶¨ÒÀÀµ×¢²áµÄ½Ó¿Ú
+        /// è·å¾—ç»‘å®šä¾èµ–æ³¨å†Œçš„æ¥å£
         /// </summary>
         /// <returns></returns>
         public IRegisterBinding GetRegisterBindingInterface()

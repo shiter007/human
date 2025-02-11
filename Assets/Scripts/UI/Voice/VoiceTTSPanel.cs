@@ -1,4 +1,4 @@
-﻿using LKZ.Utilitys;
+using LKZ.Utilitys;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;

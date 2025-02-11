@@ -1,4 +1,4 @@
-﻿using LKZ.DependencyInject;
+using LKZ.DependencyInject;
 using LKZ.VoiceSynthesis;
 using UnityEngine;
 using UnityEngine.UI;

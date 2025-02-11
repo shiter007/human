@@ -1,4 +1,4 @@
-﻿using LKZ.DependencyInject;
+using LKZ.DependencyInject;
 using LKZ.Rolle;
 using LKZ.TypeEventSystem;
 using System;

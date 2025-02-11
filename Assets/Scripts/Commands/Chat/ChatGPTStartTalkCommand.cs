@@ -1,4 +1,4 @@
-﻿namespace LKZ.Commands.Chat
+namespace LKZ.Commands.Chat
 {
     /// <summary>
     /// 开始说话

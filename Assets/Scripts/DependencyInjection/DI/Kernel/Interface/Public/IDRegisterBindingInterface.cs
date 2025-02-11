@@ -1,4 +1,4 @@
-﻿namespace LKZ.DependencyInject
+namespace LKZ.DependencyInject
 {
     /// <summary>
     /// 依赖注入，外面继承这个接口，就可以注入一个接口给你绑定的

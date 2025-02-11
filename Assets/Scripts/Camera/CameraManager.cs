@@ -1,4 +1,4 @@
-﻿using LKZ.Commands.Camera;
+using LKZ.Commands.Camera;
 using LKZ.DependencyInject;
 using LKZ.Rolle;
 using LKZ.TypeEventSystem;

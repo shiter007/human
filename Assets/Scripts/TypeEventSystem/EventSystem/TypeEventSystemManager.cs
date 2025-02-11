@@ -7,31 +7,31 @@ using UnityEngine;
 namespace LKZ.TypeEventSystem
 {
     /// <summary>
-    /// ÀàĞÍÊÂ¼şÏµÍ³¹ÜÀí
+    /// ç±»å‹äº‹ä»¶ç³»ç»Ÿç®¡ç†
     /// </summary>
     [DefaultExecutionOrder(-100)]
     [HelpURL("http://www.lkz.fit")]
     [DisallowMultipleComponent]
-    [AddComponentMenu("LKZ/ÀàĞÍÊÂ¼şÏµÍ³¹ÜÀí")]
+    [AddComponentMenu("LKZ/ç±»å‹äº‹ä»¶ç³»ç»Ÿç®¡ç†")]
     public class TypeEventSystemManager : MonoBehaviour, ISendCommand, IRegisterCommand, IDRegisterBindingInterface 
     {
-        [SerializeField, Tooltip("ÊÇ·ñ¼ÓÔØ³¡¾°²»Ïú»Ù")]
+        [SerializeField, Tooltip("æ˜¯å¦åŠ è½½åœºæ™¯ä¸é”€æ¯")]
         private bool dontDestroyOnLoad = true;
 
         /// <summary>
-        /// ´æ´¢×¢²áµÄ½Ó¿ÚµÄ¼¯ºÏ
-        /// ¼üÊÇÄÇ¸ö×¢²áµÄÀàĞÍ£¬ÊÇÒ»¸ö½á¹¹Ìå£¬µÈÓÚÊÇÒ»¸öÃüÁî
-        /// ÖµÊÇÄÇ¸ö¼üµÄÎ¯ÍĞ·µ»ØÖµµÄ½Ó¿Ú£¬¾ÍÊÇEventRegister<T>Õâ¸öÀà
+        /// å­˜å‚¨æ³¨å†Œçš„æ¥å£çš„é›†åˆ
+        /// é”®æ˜¯é‚£ä¸ªæ³¨å†Œçš„ç±»å‹ï¼Œæ˜¯ä¸€ä¸ªç»“æ„ä½“ï¼Œç­‰äºæ˜¯ä¸€ä¸ªå‘½ä»¤
+        /// å€¼æ˜¯é‚£ä¸ªé”®çš„å§”æ‰˜è¿”å›å€¼çš„æ¥å£ï¼Œå°±æ˜¯EventRegister<T>è¿™ä¸ªç±»
         /// </summary>
         private Dictionary<Type, IEventInterface> allEventType_Dic;
 
          
-        #region ¹«¿ª ½Ó¿Ú·½·¨
+        #region å…¬å¼€ æ¥å£æ–¹æ³•
         /// <summary>
-        /// ¼àÌı
-        /// ²»ĞèÒª¼àÌıÊÂ¼şµÄ»ª£¬¾Íµ÷ÓÃUnRegisterÈ¡Ïû¼àÌıÊÂ¼ş
+        /// ç›‘å¬
+        /// ä¸éœ€è¦ç›‘å¬äº‹ä»¶çš„åï¼Œå°±è°ƒç”¨UnRegisterå–æ¶ˆç›‘å¬äº‹ä»¶
         /// </summary>
-        /// <param name="action">»Øµ÷</param>
+        /// <param name="action">å›è°ƒ</param>
         public void Register<T>(Action<T> action)
             where T : struct
         {
@@ -47,9 +47,9 @@ namespace LKZ.TypeEventSystem
         }
 
         /// <summary>
-        /// È¡Ïû¼àÌıÊÂ¼ş
+        /// å–æ¶ˆç›‘å¬äº‹ä»¶
         /// </summary>
-        /// <param name="action">È¡Ïû¼àÌıµÄ»Øµ÷Î¯ÍĞ</param>
+        /// <param name="action">å–æ¶ˆç›‘å¬çš„å›è°ƒå§”æ‰˜</param>
         public void UnRegister<T>(Action<T> action)
             where T : struct
         {
@@ -61,10 +61,10 @@ namespace LKZ.TypeEventSystem
         }
 
         /// <summary>
-        /// ·¢ËÍÊÂ¼ş
+        /// å‘é€äº‹ä»¶
         /// </summary>
-        /// <param name="instanceParameter">Õâ¸öÊÇÄÇ¸öÃüÁî£¬¾ÍÊÇ×¢²áµÄÎ¯ÍĞµÄÀàĞÍ
-        /// Õâ¸öÊÇÒ»¸öÊµÀı£¬¾ÍÊÇÄÇ¸ö×¢²áÎ¯ÍĞµÄ²ÎÊı½á¹¹Ìå£¬½á¹¹ÌåÀïÃæ¿ÉÒÔ·Å¸ø¼àÌıÕß´«µİ²ÎÊı</param>
+        /// <param name="instanceParameter">è¿™ä¸ªæ˜¯é‚£ä¸ªå‘½ä»¤ï¼Œå°±æ˜¯æ³¨å†Œçš„å§”æ‰˜çš„ç±»å‹
+        /// è¿™ä¸ªæ˜¯ä¸€ä¸ªå®ä¾‹ï¼Œå°±æ˜¯é‚£ä¸ªæ³¨å†Œå§”æ‰˜çš„å‚æ•°ç»“æ„ä½“ï¼Œç»“æ„ä½“é‡Œé¢å¯ä»¥æ”¾ç»™ç›‘å¬è€…ä¼ é€’å‚æ•°</param>
         public void Send<T>(T instanceParameter)
             where T : struct
         {
@@ -76,10 +76,10 @@ namespace LKZ.TypeEventSystem
         }
         #endregion
 
-        #region ÒÀÀµ×¢Èë½Ó¿Ú·½·¨
+        #region ä¾èµ–æ³¨å…¥æ¥å£æ–¹æ³•
         /// <summary>
-        /// ÒÀÀµ×¢Èë»Øµ÷
-        /// ÎÒ°Ñ×Ô¼ºµÄ½Ó¿Ú×¢Èë½øÈ¥
+        /// ä¾èµ–æ³¨å…¥å›è°ƒ
+        /// æˆ‘æŠŠè‡ªå·±çš„æ¥å£æ³¨å…¥è¿›å»
         /// </summary>
         /// <param name="registerBinding"></param>
         void IDRegisterBindingInterface.DIRegisterBinding(IRegisterBinding registerBinding)
@@ -90,7 +90,7 @@ namespace LKZ.TypeEventSystem
 
 #if UNITY_EDITOR
             if (FindObjectsOfType<TypeEventSystemManager>().Length > 1)
-                Debug.LogError($"³¡¾°ÖĞÓĞ¶à¸ö{nameof(TypeEventSystemManager)}½Å±¾!");
+                Debug.LogError($"åœºæ™¯ä¸­æœ‰å¤šä¸ª{nameof(TypeEventSystemManager)}è„šæœ¬!");
 #endif
 
             registerBinding.Binding<ISendCommand>().To(this);

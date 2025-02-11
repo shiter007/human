@@ -1,15 +1,17 @@
 %YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
+%TAG !u! tag:yousandi.cn,2023:
 --- !u!29 &1
 OcclusionCullingSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_OcclusionBakeSettings:
-    smallestOccluder: 5
-    smallestHole: 0.25
-    backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
+  serializedVersion: 3
   m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionEnabled: 0
+  m_DisplayOccluded: 0
+  m_SceneDepthBufferWidth: 512
+  m_SceneDepthBufferHeight: 512
+  m_ShadowDepthBufferWidth: 512
+  m_ShadowDepthBufferHeight: 512
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -71,7 +73,7 @@ LightmapSettings:
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
-    m_BakeBackend: 0
+    m_BakeBackend: 2
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
     m_PVRSampleCount: 500
@@ -128,11 +130,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 12217745}
   - component: {fileID: 12217744}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: TypeEventSystemManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,12 +176,13 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 244526452}
   - component: {fileID: 244526454}
   - component: {fileID: 244526453}
   m_Layer: 5
+  m_HasEditorInfo: 1
   m_Name: "\u5E95\u90E8"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,7 +253,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 305639781}
   - component: {fileID: 305639783}
@@ -257,6 +261,7 @@ GameObject:
   - component: {fileID: 305639784}
   - component: {fileID: 305639785}
   m_Layer: 5
+  m_HasEditorInfo: 1
   m_Name: Scroll View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,11 +488,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 339722390}
   - component: {fileID: 339722391}
   m_Layer: 5
+  m_HasEditorInfo: 1
   m_Name: "\u804A\u5929\u9762\u677F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -533,7 +539,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
@@ -541,6 +547,7 @@ GameObject:
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -601,6 +608,8 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 0
+  m_enableGDRP: 0
+  m_backfaceCulling: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 0
@@ -683,10 +692,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 586792716}
   m_Layer: 5
+  m_HasEditorInfo: 1
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -718,12 +728,13 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 691833831}
   - component: {fileID: 691833834}
   - component: {fileID: 691833833}
   m_Layer: 5
+  m_HasEditorInfo: 1
   m_Name: Viewport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -794,10 +805,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 829855196}
   m_Layer: 6
+  m_HasEditorInfo: 1
   m_Name: Env
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -952,11 +964,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 941116912}
   - component: {fileID: 941116913}
   m_Layer: 5
+  m_HasEditorInfo: 1
   m_Name: Toggles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1019,11 +1032,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1082215072}
   - component: {fileID: 1082215071}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: GameApp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1191,7 +1205,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1138102861}
   - component: {fileID: 1138102862}
@@ -1200,6 +1214,7 @@ GameObject:
   - component: {fileID: 1138102864}
   - component: {fileID: 1138102867}
   m_Layer: 5
+  m_HasEditorInfo: 1
   m_Name: "\u97F3\u8272\u9009\u62E9"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1308,11 +1323,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1193417261}
   - component: {fileID: 1193417260}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: RolleManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1358,13 +1374,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1324585771}
   - component: {fileID: 1324585770}
   - component: {fileID: 1324585769}
   - component: {fileID: 1324585768}
   m_Layer: 5
+  m_HasEditorInfo: 1
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1461,11 +1478,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1429274525}
   - component: {fileID: 1429274523}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: AudioModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1505,7 +1523,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1560669785}
   - component: {fileID: 1560669789}
@@ -1513,6 +1531,7 @@ GameObject:
   - component: {fileID: 1560669787}
   - component: {fileID: 1560669786}
   m_Layer: 5
+  m_HasEditorInfo: 1
   m_Name: "\u53D6\u6D88\u751F\u6210_Button"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1639,12 +1658,13 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1575908886}
   - component: {fileID: 1575908885}
   - component: {fileID: 1575908884}
   m_Layer: 0
+  m_HasEditorInfo: 1
   m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1707,12 +1727,13 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1584803527}
   - component: {fileID: 1584803526}
   - component: {fileID: 1584803528}
   m_Layer: 6
+  m_HasEditorInfo: 1
   m_Name: Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1781,6 +1802,7 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+  m_UseOcclusionCulling: 1
 --- !u!4 &1584803527
 Transform:
   m_ObjectHideFlags: 0
@@ -1825,12 +1847,13 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1821550796}
   - component: {fileID: 1821550795}
   m_Layer: 0
-  m_Name: SceneDependencyInjectContextManager
+  m_HasEditorInfo: 1
+  m_Name: ncyInjectContextManagerntextManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1993,12 +2016,13 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 1921082615}
   - component: {fileID: 1921082617}
   - component: {fileID: 1921082616}
   m_Layer: 5
+  m_HasEditorInfo: 1
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2072,12 +2096,13 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
+  serializedVersion: 7
   m_Component:
   - component: {fileID: 2087712007}
   - component: {fileID: 2087712009}
   - component: {fileID: 2087712008}
   m_Layer: 5
+  m_HasEditorInfo: 1
   m_Name: Text (Legacy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

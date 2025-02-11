@@ -1,4 +1,4 @@
-﻿using UnityEngine.Events;
+using UnityEngine.Events;
 using UnityEditor;
 
 namespace uLipSync.Timeline

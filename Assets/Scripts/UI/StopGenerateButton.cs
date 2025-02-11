@@ -1,4 +1,4 @@
-﻿using LKZ.Chat.Commands;
+using LKZ.Chat.Commands;
 using LKZ.Commands.Chat;
 using LKZ.DependencyInject;
 using LKZ.TypeEventSystem;

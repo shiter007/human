@@ -1,4 +1,4 @@
-﻿using LKZ.Enum;
+using LKZ.Enum;
 using System;
 
 namespace LKZ.Chat.Commands

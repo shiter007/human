@@ -1,4 +1,4 @@
-﻿namespace LKZ.Commands.Voice
+namespace LKZ.Commands.Voice
 {
     /// <summary>
     /// 配置语音识别命令

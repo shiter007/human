@@ -1,0 +1,33 @@
+
+=== Tue Feb 11 16:25:27 2025
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.modules.infinity@1.0.0
+The following packages were updated:
+  com.unity.burst from version 1.8.15 to 1.8.17
+  com.unity.memoryprofiler from version 1.1.0 to 1.1.1
+
+=== Tue Feb 11 19:36:29 2025
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.modules.infinity@1.0.0
+The following packages were updated:
+  com.unity.burst from version 1.8.15 to 1.8.17
+  com.unity.memoryprofiler from version 1.1.0 to 1.1.1
+
+=== Tue Feb 11 22:21:46 2025
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.modules.infinity@1.0.0
+The following packages were updated:
+  com.unity.burst from version 1.8.15 to 1.8.17
+  com.unity.memoryprofiler from version 1.1.0 to 1.1.1
